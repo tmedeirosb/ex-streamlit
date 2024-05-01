@@ -1997,3 +1997,39 @@ NoneType: None
                                       warm_start=False))],
          verbose=False)
 2024-05-01 12:00:28,360:INFO:save_model() successfully completed......................................
+2024-05-01 12:01:47,432:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-05-01 12:01:47,432:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-05-01 12:01:47,432:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-05-01 12:01:47,432:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-05-01 12:01:47,916:INFO:Initializing load_model()
+2024-05-01 12:01:47,916:INFO:load_model(model_name=final_cancer, platform=None, authentication=None, verbose=True)
+2024-05-01 12:01:51,070:INFO:Initializing load_model()
+2024-05-01 12:01:51,071:INFO:load_model(model_name=final_cancer, platform=None, authentication=None, verbose=True)
+2024-05-01 12:01:51,188:INFO:Initializing predict_model()
+2024-05-01 12:01:51,189:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7fb55e50bf10>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['age', 'menopause', 'tumor-size',
+                                             'inv-nodes', 'node-caps',
+                                             'deg-malig', 'breast',
+                                             'breast-quad', 'irradiat'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('actual_estimator',
+                 ExtraTreesClassifier(class_weight='balanced_subsample',
+                                      max_depth=6, max_features='log2',
+                                      min_impurity_decrease=0.001,
+                                      min_samples_leaf=6, min_samples_split=9,
+                                      n_estimators=190, n_jobs=-1,
+                                      random_state=123))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x7fb55dc6f130>)
+2024-05-01 12:01:51,189:INFO:Checking exceptions
+2024-05-01 12:01:51,189:INFO:Preloading libraries
+2024-05-01 12:01:51,189:INFO:Set up data.
+2024-05-01 12:01:51,193:INFO:Set up index.
