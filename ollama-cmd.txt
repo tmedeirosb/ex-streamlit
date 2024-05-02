@@ -1,0 +1,14 @@
+#INSTALAÇÃO OLLAMA 
+curl https://ollama.ai/install.sh | sh
+
+#INICIAR SERVER
+ollama serve
+
+#LIST MODELS
+ollama list
+
+#DOWNLOAD MODEL
+ollama pull llama3
+
+#RODAR MODELO
+ollama run llama3
