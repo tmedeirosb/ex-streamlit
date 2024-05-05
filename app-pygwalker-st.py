@@ -1,3 +1,5 @@
+#https://docs.kanaries.net/pygwalker/use-pygwalker-with-streamlit
+
 from pygwalker.api.streamlit import StreamlitRenderer
 import pandas as pd
 import streamlit as st
