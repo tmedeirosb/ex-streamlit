@@ -4,6 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import time
 import pandas as pd
+import plotly.express as px
 
 
 st.set_page_config(page_title='Testes Streamlit', page_icon=':rocket:')
@@ -64,3 +65,38 @@ if file:
         df = carregar_dados(file)
     st.success('Dados carregados com sucesso!')
     st.dataframe(df)
+
+
+st.subheader('Teste expander')
+
+with st.expander('Veja mais'):
+    st.write('Texto expandido')
+
+st.subheader('Teste de formulário')
+
+with st.form(key='form'):
+    nome = st.text_input('Nome')
+    idade = st.number_input('Idade', min_value=0, max_value=100)
+    sexo = st.radio('Sexo', ['Masculino', 'Feminino'])
+    cor = st.selectbox('Cor', ['Branco', 'Preto', 'Pardo'])
+    enviar = st.form_submit_button('Enviar')
+    nascimento = st.date_input('Data de nascimento', min_value=pd.to_datetime('1900-01-01'), max_value=pd.to_datetime('2022-01-01'))
+
+if enviar:  
+    st.write(f'Nome: {nome}, Idade: {idade}, Sexo: {sexo}, Cor: {cor}, Data de nascimento: {nascimento}')
+
+
+st.subheader('Teste de plotly')
+
+df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv")
+st.dataframe(df)
+
+fig = px.scatter(df.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent")
+st.plotly_chart(fig)
+
+df_continent = df.groupby(['continent', 'year'])['gdpPercap'].mean().reset_index()
+fig = px.line(df_continent, x="year", y="gdpPercap", color="continent")
+st.plotly_chart(fig)
+
+fig = px.bar(df, x='year', y='pop', color='continent')
+st.plotly_chart(fig)
