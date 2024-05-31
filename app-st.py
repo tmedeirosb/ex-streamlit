@@ -8,7 +8,8 @@ import os
 
 def is_running_on_streamlit_cloud():
     # Verificar a variável de ambiente específica do Streamlit Cloud
-    return "STREAMLIT_SERVER_EMAIL" in os.environ
+    #return "STREAMLIT_SERVER_EMAIL" in os.environ
+    return "STREAMLIT_DEPLOYMENT" in os.environ
 
 if is_running_on_streamlit_cloud():
     st.write("A aplicação está rodando na nuvem (Streamlit Cloud).")
