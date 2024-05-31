@@ -13,6 +13,9 @@ st.write("<h1> Testes diversos com Streamlit </h1>", unsafe_allow_html=True)
 
 # Carregar dados de exemplo para obter nomes de características
 data = get_data('cancer')
+st.session_state.data = data
+
+st.download_button('Baixar dados', st.session_state.data.to_csv(index=False), 'cancer.csv', 'csv')
 
 st.write('Teste st.dataframe')
 st.dataframe(data)

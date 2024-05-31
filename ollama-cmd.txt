@@ -12,3 +12,4 @@ ollama pull llama3
 
 #RODAR MODELO
 ollama run llama3
+ollama run llama3:70b

@@ -15,7 +15,7 @@ data = get_data('cancer')
 data = data.drop(['Class'], axis=1)  # Remover a coluna de saída para obter apenas características
 
 # Título da Aplicação
-st.title('Predição de Câncer com PyCaret e Streamlit')
+st.title('Predição de Câncer com PyCaret e Streamlit - SECRECT KEY')
 
 # Criar filtros para cada característica
 inputs = {}
