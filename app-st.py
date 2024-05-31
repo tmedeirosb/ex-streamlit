@@ -3,6 +3,20 @@ from pycaret.datasets import get_data
 from pycaret.classification import load_model, predict_model
 import numpy as np
 import pandas as pd
+import os
+
+
+def is_running_on_streamlit_cloud():
+    # Verificar a variável de ambiente específica do Streamlit Cloud
+    return "STREAMLIT_SERVER_EMAIL" in os.environ
+
+if is_running_on_streamlit_cloud():
+    st.write("A aplicação está rodando na nuvem (Streamlit Cloud).")
+    
+    # Acessar a chave da API
+    #api_key = os.getenv("KEY_SECRET")
+else:
+    st.write("A aplicação está rodando localmente.")
 
 #import pycaret
 #st.write(pycaret.__version__)
