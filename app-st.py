@@ -17,7 +17,13 @@ if is_running_on_streamlit_cloud():
     st.write("A aplicação está rodando na nuvem (Streamlit Cloud).")
     
     # Acessar a chave da API
-    #api_key = os.getenv("KEY_SECRET")
+    key_secret = os.getenv("KEY_SECRET")
+    key_user = st.text_input("Digite a chave de acesso", type="password")
+    if key_user == key_secret:
+        st.write("Acesso liberado!")
+    else:
+        st.write("Acesso negado!")
+        st.stop()
 else:
     st.write("A aplicação está rodando localmente.")
 
