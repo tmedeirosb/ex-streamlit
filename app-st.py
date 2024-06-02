@@ -24,6 +24,7 @@ if is_running_on_streamlit_cloud():
     else:
         st.write("Acesso negado!")
         st.stop()
+        
 else:
     st.write("A aplicação está rodando localmente.")
 
