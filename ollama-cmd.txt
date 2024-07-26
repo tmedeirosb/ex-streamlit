@@ -13,3 +13,10 @@ ollama pull llama3
 #RODAR MODELO
 ollama run llama3
 ollama run llama3:70b
+
+#DICA DE USAR O CHATOPENAI COM OLLAMA
+llm = ChatOpenAI(
+    api_key="ollama",
+    model="llama3:latest",
+    base_url="http://localhost:11434/v1",
+)
